@@ -13,6 +13,6 @@ public class SimpleItemValidator implements ItemValidator {
     @Override
     public boolean isItemValid(Item item) {
         Matcher matcher = compile ("([^a-zA-Z0-9])").matcher(item.getName());
-        return !matcher.find() || Arrays.asList(Color.values()).contains(item.getColor());
+        return !matcher.find() && Arrays.asList(Color.values()).contains(item.getColor());
     }
 }
